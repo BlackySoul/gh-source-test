@@ -16,8 +16,18 @@ jobs:
         run: npm ci
         shell: bash
 
+      - name: Create files
+        run: |
+          mkdir -p testing
+          echo "123" > testing/test.txt
+
       - name: Build website
-        run: NEXT_PUBLIC_BASE_PATH=/gh-push-test/2.0.0 NEXT_PUBLIC_DIST_DIR=out/2.0.0 npm run build
+        run: |
+          npm run build
+          mv testing/* out/3.0.0/testing
+        env:
+          NEXT_PUBLIC_VKUI_DOCS_BASE_PATH: /gh-push-test/3.0.0
+          NEXT_PUBLIC_VKUI_DOCS_DIST_DIR: out/3.0.0
 
       - name: Publishing doc
         uses: JamesIves/github-pages-deploy-action@v4
