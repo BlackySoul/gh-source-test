@@ -2,6 +2,7 @@ import nextra from "nextra";
 
 // Set up Nextra with its configuration
 const withNextra = nextra({
+  pa,
   // ... Add Nextra-specific options here
 });
 
@@ -11,5 +12,6 @@ export default withNextra({
   images: {
     unoptimized: true, // mandatory, otherwise won't export
   },
+  basePath: "gh-push-test",
   // ... Add regular Next.js options here
 });
