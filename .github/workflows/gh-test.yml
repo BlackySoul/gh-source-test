@@ -24,6 +24,7 @@ jobs:
       - name: Build website
         run: |
           npm run build
+          mkdir -p out/3.0.0/testing
           mv testing/* out/3.0.0/testing
         env:
           NEXT_PUBLIC_VKUI_DOCS_BASE_PATH: /gh-push-test/3.0.0
