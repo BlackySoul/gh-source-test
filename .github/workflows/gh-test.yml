@@ -17,10 +17,7 @@ jobs:
         shell: bash
 
       - name: Build website
-        run: npm run build
-        env:
-          NEXT_PUBLIC_BASE_PATH: /gh-push-test/1.0.0
-          NEXT_PUBLIC_DIST_DIR: out/1.0.0
+        run: NEXT_PUBLIC_BASE_PATH=/gh-push-test/2.0.0 NEXT_PUBLIC_DIST_DIR=out/2.0.0 npm run build
 
       - name: Publishing doc
         uses: JamesIves/github-pages-deploy-action@v4
