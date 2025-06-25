@@ -2,7 +2,8 @@
   "scripts": {
     "dev": "next",
     "build": "next build",
-    "start": "next start"
+    "start": "next start",
+    "test": "NEXT_PUBLIC_BASE_PATH=/3.0.0 NEXT_PUBLIC_DIST_DIR=out/3.0.0 npm run build"
   },
   "dependencies": {
     "next": "^15.3.4",
